@@ -28,7 +28,7 @@ def idgenerator(tab):
     myint = int(myint)+1
     return idval[0:3]+str(myint)
 
-print(idgenerator('CUSTOMER'))
+
 @app.route('/')   #routing the homepage
 def home():
     return render_template('index.html')
@@ -164,7 +164,7 @@ def product_add():
         price = request.form.get("price")
         supplier_id = request.form.get("supplier_id")
         ID = idgenerator('PRODUCT')
-        cn.execute(f"insert into product(product_name,stock,price,supplier_id) values ('{ID}','{product_name}','{stock}','{price}','{supplier_id}')")
+        cn.execute(f"insert into product(product_id,product_name,stock,price,supplier_id) values ('{ID}','{product_name}','{stock}','{price}','{supplier_id}')")
         conn.commit()
         print('Data has been Inserted')
         return jsonify({'message':'successful'})
@@ -180,7 +180,7 @@ def orders_add():
          customer_id=request.form.get('customer_id')
          quantity=request.form.get('quantity')
          ID = idgenerator('ORDERS')
-         cn.execute(f"insert into orders(product_id,customer_id,quantity)values('{ID}','{product_id}','{customer_id}','{quantity}')")
+         cn.execute(f"insert into orders(order_id,product_id,customer_id,quantity)values('{ID}','{product_id}','{customer_id}','{quantity}')")
          conn.commit()
          print('Data has been inserted')
          return jsonify({'message':'sucessful'})
@@ -196,7 +196,7 @@ def supplier_add():
          supplier_address=request.form.get('supplier_address')
          supplier_email=request.form.get('supplier_email')
          ID = idgenerator('SUPPLIER')
-         cn.execute(f"insert into supplier(supplier_name,supplier_address,supplier_email)values('{ID}','{supplier_name}','{supplier_address}','{supplier_email}')")
+         cn.execute(f"insert into supplier(supplier_id,supplier_name,supplier_address,supplier_email)values('{ID}','{supplier_name}','{supplier_address}','{supplier_email}')")
          conn.commit()
          print('data has been inserted')
          return jsonify({'message':'sucessful'})
