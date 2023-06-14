@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flash Web App</title>
+  <style>
+    /* CSS Styling */
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .orders-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .orders-table th,
+    .orders-table td {
+      padding: 8px;
+      border: 1px solid white;
+    }
+    .orders-table th {
+      background-color: #FFA500;
+    }
+  </style>
+</head>
+<body>
+  <h1>Orders</h1>
+  <table class="orders-table">
+    <tr>
+      <th>Order ID</th>
+      <th>Product ID</th>
+      <th>Customer ID</th>
+      <th>Quantity</th>
+    </tr>
+    {% for order in data %}
+      <tr>
+        <td>{{ order['order_id'] }}</td>
+        <td>{{ order['product_id'] }}</td>
+        <td>{{ order['customer_id'] }}</td>
+        <td>{{ order['quantity'] }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+  <script>
+    // JavaScript logic can be added here if needed
+  </script>
+</body>
+</html>

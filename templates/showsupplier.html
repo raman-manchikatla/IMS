@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flash Web App</title>
+  <style>
+    /* CSS Styling */
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .supplier-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .supplier-table th,
+    .supplier-table td {
+      padding: 8px;
+      border: 1px solid white;
+    }
+    .supplier-table th {
+      background-color: #FFA500;
+    }
+  </style>
+</head>
+<body>
+  <h1>Suppliers</h1>
+  <table class="supplier-table">
+    <tr>
+      <th>Supplier ID</th>
+      <th>Supplier Name</th>
+      <th>Supplier Address</th>
+      <th>Supplier Email</th>
+    </tr>
+    {% for supplier in data %}
+      <tr>
+        <td>{{ supplier['supplier_id'] }}</td>
+        <td>{{ supplier['supplier_name'] }}</td>
+        <td>{{ supplier['supplier_address'] }}</td>
+        <td>{{ supplier['supplier_email'] }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+  <script>
+    // JavaScript logic can be added here if needed
+  </script>
+</body>
+</html>

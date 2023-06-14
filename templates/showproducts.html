@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flash Web App</title>
+  <style>
+    /* CSS Styling */
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .product-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .product-table th,
+    .product-table td {
+      padding: 8px;
+      border: 1px solid white;
+    }
+    .product-table th {
+      background-color: #FFA500;
+    }
+  </style>
+</head>
+<body>
+  <h1>Products</h1>
+  <table class="product-table">
+    <tr>
+      <th>Product ID</th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Supplier ID</th>
+    </tr>
+    {% for product in data %}
+      <tr>
+        <td>{{ product['product_id'] }}</td>
+        <td>{{ product['product_name'] }}</td>
+        <td>{{ product['price'] }}</td>
+        <td>{{ product['stock'] }}</td>
+        <td>{{ product['supplier_id'] }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+  <script>
+    // JavaScript logic can be added here if needed
+  </script>
+</body>
+</html>

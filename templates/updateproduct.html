@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Product</title>
+    <style>
+        /* Add your custom styles here */
+        /* Example styles with beautiful colors and animated CSS */
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        select,
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Update Product</h2>
+        <form id="updateProductForm" action="/update-product" method="post">
+            <div class="form-group">
+                <label for="product_id">Product ID</label>
+                <input type="text" id="product_id" name="product_id" required>
+            </div>
+            <div class="form-group">
+                <label for="changeOption">Change Option</label>
+                <select id="changeOption" name="change" required>
+                    <option value="product_name">Product Name</option>
+                    <option value="stock">Stock</option>
+                    <option value="price">Price</option>
+                    <option value="supplier_id">Supplier ID</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="new_value">New Value</label>
+                <input type="text" id="new_value" name="new_value" required>
+            </div>
+            <button type="submit">Update Product</button>
+        </form>
+    </div>
+</body>
+</html>

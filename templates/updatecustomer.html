@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Customer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        .container {
+            margin: 100px auto;
+            width: 400px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        
+        select, input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container animate__animated animate__fadeIn">
+        <h1>Update Customer</h1>
+        <form action="/update-customer" method="POST">
+            <label for="customer_id">Customer ID:</label>
+            <input type="text" id="customer_id" name="customer_id" required>
+            
+            <label for="change">Change:</label>
+            <select id="change" name="old_value" required>
+                <option value="customer_name">Customer Name</option>
+                <option value="customer_address">Customer Address</option>
+                <option value="customer_email">Customer Email</option>
+            </select>
+            
+            <label for="new_value">New Value:</label>
+            <input type="text" id="new_value" name="new_value" required>
+            
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</body>
+</html>
