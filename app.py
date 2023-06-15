@@ -145,7 +145,7 @@ def customer_delete():
             conn.commit()
             return jsonify({'message': 'successful'})
         except Exception as e:
-            conn.rollback()
+            pass
             return jsonify({'message': 'error', 'error_message': str(e)})
         finally:
             cn.close()
